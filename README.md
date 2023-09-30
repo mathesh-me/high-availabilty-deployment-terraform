@@ -41,3 +41,46 @@ The Terraform configuration files with(`*.tf`) in this repository define the AWS
 - [Creating Auto Scaling Group](#creating-auto-scaling-group)
 - [Application](#application)
 
+
+### Step 1: Setting up the Environment
+
+Before you begin, create a new directory with an appropriate name and open this directory in your code editor.
+
+### Step 2: Installing necessary Plugins 
+
+We have to ensure the necessary Terraform plugins installations. You have to create a new file with .tf extension and copy the code from [provider.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/providers.tf) in my repository and paste it in here. Then run the below command for plugins installation
+```
+terraform init
+```
+
+## Step 3: Creating a Separate VPC Infrastructure
+
+We have to define and provision a Virtual Private Cloud (VPC) infrastructure. The Terraform configuration files for this step can be found as [vpc.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/vpc.tf) , [subnets.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/subnets.tf) , [internet-gateway.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/internet-gateway.tf) , [route-table.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/route-table.tf) in my repository , Copy and pste the files.
+
+## Step 4: Creating Security Group
+
+We have to Set up a security group to control inbound and outbound traffic for our instances. Configuration files for this step can be found in [security-group.tf]((https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/security-group.tf) file in my repository.
+
+## Step 5: Creating Target Group
+
+We have to create an Elastic Load Balancer target group to route traffic to instances within our Auto Scaling Group. Configuration files  for this step can be found in [target-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/target-group.tf) file in my repository.
+
+## Step 6: Creating Load Balancer
+
+Next we have to set up an Elastic Load Balancer (ELB) to distribute incoming traffic across our instances. The ELB configuration can be found in the [loadbalancer.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/loadbalancer.tf) file in my repository.
+
+## Step 7: Defining Launch Template
+
+We have to define a launch template specifying instance configuration details for your Auto Scaling Group. Configuration files for this step are located in the [launch-template.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/launch-template.tf) file in my repository.
+
+## Step 8: Creating Auto Scaling Group
+
+Finally we have to create an Auto Scaling Group (ASG) to automatically adjust the number of instances based on traffic or resource utilization. ASG configuration files for are located in the [asg.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/asg.tf) file in my repository.
+
+## Step 9: Providing values for Variables
+
+Till now, we have only declared the variables without assigning any values to them. Copy the [variables.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/varables.tf)  and [terraform.tfvars](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/terraform.tfvars) files from my repository. Don't forget to customize `terraform.tfvars` according to your requirements.
+
+
+
+
