@@ -31,7 +31,7 @@ The Terraform configuration files with(`*.tf`) in this repository define the AWS
 
 ## Steps 
 
-- [Setting up the Environment](#setting-up-the-Environment)
+- [Setting up the Environment](#step-1-setting-up-the-Environment)
 - [Installing necessary Plugins](#installing-necessary-plugins)
 - [Creating a separate VPC Infrastructure](#creating-a-separate-vpc-infrastructure)
 - [Creating Security group](#creating-security-group)
