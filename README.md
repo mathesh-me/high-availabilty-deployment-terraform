@@ -28,3 +28,16 @@ This project demonstrates the implementation of a high availability infrastructu
 ## Terraform Configuration
 
 The Terraform configuration files with(`*.tf`) in this repository define the AWS resources and settings required to create the high availability infrastructure.
+
+## Steps 
+
+- [Setting up the Environment](#setting-up-the-Environment)
+- [Installing necessary Plugins](#installing-necessary-plugins)
+- [Creating a separate VPC Infrastructure](#creating-a-separate-vpc-infrastructure)
+- [Creating Security group](#creating-security-group)
+- [Creating Target group](#creating-target-group)
+- [Creating Load balancer](#creating-load-balancer)
+- [Defining Launch Template](#defining-launch-template)
+- [Creating Auto Scaling Group](#creating-auto-scaling-group)
+- [Application](#application)
+
