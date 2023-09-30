@@ -59,11 +59,11 @@ We have to define and provision a Virtual Private Cloud (VPC) infrastructure. Th
 
 ## Step 4: Creating Security Group
 
-We have to Set up a security group to control inbound and outbound traffic for our instances. Configuration files for this step can be found in [security-group.tf]((https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/security-group.tf) file in my repository.
+We have to Set up a security group to control inbound and outbound traffic for our instances. Configuration files for this step can be found in [security-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/security-group.tf) file in my repository.
 
 ## Step 5: Creating Target Group
 
-We have to create an Elastic Load Balancer target group to route traffic to instances within our Auto Scaling Group. Configuration files  for this step can be found in [target-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/target-group.tf) file in my repository.
+We have to create an Elastic Load Balancer target group to route traffic to instances within our Auto Scaling Group. Configuration files  for this step can be found in [target-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/target-group.tf) file in my repository and also add the user data script file form [user-data.sh](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/user-data.sh) .
 
 ## Step 6: Creating Load Balancer
 
@@ -81,6 +81,20 @@ Finally we have to create an Auto Scaling Group (ASG) to automatically adjust th
 
 Till now, we have only declared the variables without assigning any values to them. Copy the [variables.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/varables.tf)  and [terraform.tfvars](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/terraform.tfvars) files from my repository. Don't forget to customize `terraform.tfvars` according to your requirements.
 
+## Getting DNS as Output
 
+We don't have to necessarily need to go to console for fetch the DNS name We can get it in terminal using output concept . Configuration files for this step are located in the [outputs.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/outputs.tf) file in my repository.
 
+![dns](https://github.com/mathesh-me/high-availabilty-deployment-terraform/assets/144098846/4c597c19-54ad-4de7-ac8a-55b7cd20e4b7)
 
+## Application
+
+Once the above-mentioned steps are completed, apply the following commands to create the resources:
+```
+terraform plan
+```
+The above command will provide you with a preview of the resources that are going to be created.
+```
+terraform apply -auto-approve
+```
+The above command will create the resources defined in our configuration. Shortly after, the Auto Scaling Group (ASG) will launch instances and deploy our application on those instances.
