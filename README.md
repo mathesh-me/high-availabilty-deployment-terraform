@@ -32,65 +32,65 @@ The Terraform configuration files with(`*.tf`) in this repository define the AWS
 
 ## Steps 
 
-- [Setting up the Environment](#setting-up-the-environment)
-- [Installing necessary Plugins](#installing-necessary-plugins)
-- [Creating a separate VPC Infrastructure](#creating-a-separate-vpc-infrastructure)
-- [Creating Security group](#creating-security-group)
-- [Creating Target group](#creating-target-group)
-- [Creating Load balancer](#creating-load-balancer)
-- [Defining Launch Template](#defining-launch-template)
-- [Creating Auto Scaling Group](#creating-auto-scaling-group)
-- [Providing values for Variables](#providing-values-for-variables)
-- [Getting DNS as Output](#getting-dns-as-output)
-- [Application](#application)
+- [Setting up the Environment](#setting-up-the-environment-)
+- [Installing necessary Plugins](#installing-necessary-plugins-)
+- [Creating a separate VPC Infrastructure](#creating-a-separate-vpc-infrastructure-)
+- [Creating Security group](#creating-security-group-)
+- [Creating Target group](#creating-target-group-)
+- [Creating Load balancer](#creating-load-balancer-)
+- [Defining Launch Template](#defining-launch-template-)
+- [Creating Auto Scaling Group](#creating-auto-scaling-group-)
+- [Providing values for Variables](#providing-values-for-variables-)
+- [Getting DNS as Output](#getting-dns-as-output-)
+- [Application](#application-)
 
 
-### Setting up the Environment
+#### Setting up the Environment :
 
 Before you begin, create a new directory with an appropriate name and open this directory in your code editor.
 
-### Installing necessary Plugins 
+#### Installing necessary Plugins :
 
 We have to ensure the necessary Terraform plugins installations. You have to create a new file with .tf extension and copy the code from [provider.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/providers.tf) in my repository and paste it in here. Then run the below command for plugins installation
 ```
 terraform init
 ```
 
-### Creating a Separate VPC Infrastructure
+#### Creating a Separate VPC Infrastructure :
 
 We have to define and provision a Virtual Private Cloud (VPC) infrastructure. The Terraform configuration files for this step can be found as [vpc.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/vpc.tf) , [subnets.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/subnets.tf) , [internet-gateway.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/internet-gateway.tf) , [route-table.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/route-table.tf) in my repository , Copy and pste the files.
 
-### Creating Security Group
+#### Creating Security Group :
 
 We have to Set up a security group to control inbound and outbound traffic for our instances. Configuration files for this step can be found in [security-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/security-group.tf) file in my repository.
 
-### Creating Target Group
+#### Creating Target Group :
 
 We have to create an Elastic Load Balancer target group to route traffic to instances within our Auto Scaling Group. Configuration files  for this step can be found in [target-group.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/target-group.tf) file in my repository and also add the user data script file form [user-data.sh](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/user-data.sh) .
 
-### Creating Load Balancer
+#### Creating Load Balancer :
 
 Next we have to set up an Elastic Load Balancer (ELB) to distribute incoming traffic across our instances. The ELB configuration can be found in the [loadbalancer.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/loadbalancer.tf) file in my repository.
 
-### Defining Launch Template
+#### Defining Launch Template :
 
 We have to define a launch template specifying instance configuration details for your Auto Scaling Group. Configuration files for this step are located in the [launch-template.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/launch-template.tf) file in my repository.
 
-### Creating Auto Scaling Group
+#### Creating Auto Scaling Group :
 
 Finally we have to create an Auto Scaling Group (ASG) to automatically adjust the number of instances based on traffic or resource utilization. ASG configuration files for are located in the [asg.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/asg.tf) file in my repository.
 
-### Providing values for Variables
+#### Providing values for Variables :
 
 Till now, we have only declared the variables without assigning any values to them. Copy the [variables.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/varables.tf)  and [terraform.tfvars](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/terraform.tfvars) files from my repository. Don't forget to customize `terraform.tfvars` according to your requirements.
 
-### Getting DNS as Output
+#### Getting DNS as Output :
 
 We don't have to necessarily need to go to console for fetch the DNS name We can get it in terminal using output concept . Configuration files for this step are located in the [outputs.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/outputs.tf) file in my repository.
 
 ![dns](https://github.com/mathesh-me/high-availabilty-deployment-terraform/assets/144098846/4c597c19-54ad-4de7-ac8a-55b7cd20e4b7)
 
-### Application
+#### Application :
 
 Once the above-mentioned steps are completed, apply the following commands to create the resources:
 ```
