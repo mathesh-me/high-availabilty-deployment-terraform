@@ -15,15 +15,13 @@ This project demonstrates the implementation of a high availability infrastructu
 8. **CloudWatch:** For monitoring and scaling policies.
 
 ## Architecture Diagram
+![Blank diagram (6)](https://github.com/mathesh-me/high-availabilty-deployment-terraform/assets/144098846/adad4562-7798-4d15-827e-56d5e5e0206b)
 
 ## Prerequistes
 1. Basic knowledge of AWS services and concepts.<br>
 2. Familiarity with Terraform and infrastructure as code principles.<br>
 3. An AWS account with appropriate permissions.<br>
 4. An IDE of your Choice , I would suggest VS Code Editor .<br>
-
-## Architecture Diagram
-![Blank diagram (6)](https://github.com/mathesh-me/high-availabilty-deployment-terraform/assets/144098846/adad4562-7798-4d15-827e-56d5e5e0206b)
 
 
 ## Terraform Configuration
