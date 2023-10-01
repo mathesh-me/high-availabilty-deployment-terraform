@@ -80,7 +80,7 @@ Finally we have to create an Auto Scaling Group (ASG) to automatically adjust th
 
 #### Step 9 : Providing values for Variables
 
-Till now, we have only declared the variables without assigning any values to them. Copy the [variables.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/varables.tf)  and [terraform.tfvars](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/terraform.tfvars) files from my repository. Don't forget to customize `terraform.tfvars` according to your requirements.
+Till now, we have only assign variables without hardcoding values to them . Create two files with name variables.tf for variable declaration and terraform.tfvars for assign values to variables declared , Copy the [variables.tf](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/varables.tf)  and [terraform.tfvars](https://github.com/mathesh-me/high-availabilty-deployment-terraform/blob/main/High%20Availability%20Application%20in%20AWS%20using%20Terraform/terraform.tfvars) files from my repository. Don't forget to customize `terraform.tfvars` according to your requirements.
 
 #### Step 10 : Getting DNS as Output
 
