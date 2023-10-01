@@ -98,6 +98,6 @@ The above command will provide you with a preview of the resources that are goin
 ```
 terraform apply -auto-approve
 ```
-The above command will create the resources defined in our configuration. Shortly after, the Auto Scaling Group (ASG) will launch instances and deploy our application on those instances.
+The above command will create the resources defined in our configuration. Shortly after, the Auto Scaling Group (ASG) will launch instances and deploy our application on those instances , You can see final output like below picture :
 ![result](https://github.com/mathesh-me/high-availabilty-deployment-terraform/assets/144098846/b5add2bd-e0ef-4cd0-8ec8-420932af301d)
 
